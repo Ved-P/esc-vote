@@ -6,6 +6,8 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+
+    user-select: none;
 }
 
 .swipe {
@@ -55,11 +57,12 @@ body {
 
     width: 33vw;
     height: 90vh;
-    line-height: 90vh;
 
     border-radius: 20px;
 
     background-color: black;
+
+    z-index: 100;
 }
 
 #design-container img {
