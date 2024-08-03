@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.swipe {
+    color: white;
+    font-weight: 700;
+
+    width: 20vw;
+    height: 20vw;
+
+    border-radius: 10vw;
+    
+    text-align: center;
+    line-height: 20vw;
+}
+
+#outer-container {
+    margin: 0;
+    padding: 0;
+    
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+
+    background-color: antiquewhite;
+}
+
+#outer-container div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#swipe-left {
+    left: 0;
+    right: 67vw;
+
+    background-color: mediumseagreen;
+}
+
+#design-container {
+    left: 0;
+    right: 0;
+
+    padding: 0;
+
+    width: 33vw;
+    height: 90vh;
+    line-height: 90vh;
+
+    border-radius: 20px;
+
+    background-color: black;
+}
+
+#design-container img {
+    width: 33vw;
+    height: auto;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#swipe-right {
+    left: 67vw;
+    right: 0;
+
+    background-color: lightcoral;
+}
