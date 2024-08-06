@@ -83,3 +83,16 @@ body {
 
     background-color: lightcoral;
 }
+
+/*** ANIMATIONS ***/
+
+.return-to-mid {
+    animation: return-to-mid 0.5s ease;
+    animation-fill-mode: both;
+}
+
+@keyframes return-to-mid {
+    100% {
+        transform: translateX(0px);
+    }
+}

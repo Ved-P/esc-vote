@@ -22,6 +22,8 @@ document.addEventListener("mousemove", function(event) {
 
 document.addEventListener("mouseup", function(event) {
 
+    is_mouse_down = false;
+
     var design_bound = design_container.getBoundingClientRect();
     var left_bound = swipe_left.getBoundingClientRect();
     var right_bound = swipe_right.getBoundingClientRect();
@@ -39,13 +41,22 @@ document.addEventListener("mouseup", function(event) {
     // User swiped left.
     if (design_left_midpoint <= left_bound.right) {
         design_container.style.backgroundColor = "mediumseagreen";
+        console.log(1);
     }
 
     // User swiped right.
-    if (design_right_midpoint >= right_bound.left) {
+    else if (design_right_midpoint >= right_bound.left) {
         design_container.style.backgroundColor = "lightcoral";
+        console.log(0);
     }
 
-    design_container.style.transform = "translateX(0)";
-    is_mouse_down = false;
+    // User stayed in the middle.
+    else {
+        design_container.classList.add("return-to-mid");
+        setTimeout(function () {
+            design_container.style.transform = "translateX(0px)";
+            design_container.classList.remove("return-to-mid");
+        }, 500);
+    }
+
 });
