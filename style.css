@@ -8,6 +8,8 @@ body {
     font-style: normal;
 
     user-select: none;
+
+    overflow: hidden;
 }
 
 .swipe {
