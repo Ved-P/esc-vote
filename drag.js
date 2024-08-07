@@ -1,3 +1,10 @@
+/*** IMAGE DATABASE START ***/
+
+var images = ["test-img/test-design-1.jpg", "test-img/test-design-2.jpg", "test-img/test-design-3.jpg", "test-img/test-design-4.jpg"];
+var index = 0;
+
+/*** IMAGE DATABASE END ***/
+
 var design_container = document.getElementById("design-container");
 var swipe_left = document.getElementById("swipe-left");
 var swipe_right = document.getElementById("swipe-right");
@@ -68,6 +75,10 @@ function image_transition_animation(fade_out_direction) {
             design_container.style.transform = "scale(0)";
             design_container.classList.remove("fade-out-" + fade_out_direction);
 
+            // Switch to next image.
+            index++;
+            design_container.innerHTML = html_img(images[index]);
+
             design_container.classList.add("fade-in");
             setTimeout(function () {
                 design_container.style.opacity = "1";
@@ -75,4 +86,8 @@ function image_transition_animation(fade_out_direction) {
                 design_container.classList.remove("fade-in");
             }, 500);
         }, 500);
+}
+
+function html_img(src) {
+    return "<img draggable='false' src='" + src + "'>";
 }
