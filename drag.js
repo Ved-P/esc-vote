@@ -40,14 +40,14 @@ document.addEventListener("mouseup", function(event) {
 
     // User swiped left.
     if (design_left_midpoint <= left_bound.right) {
-        design_container.style.backgroundColor = "mediumseagreen";
         console.log(1);
+        image_transition_animation("left");
     }
 
     // User swiped right.
     else if (design_right_midpoint >= right_bound.left) {
-        design_container.style.backgroundColor = "lightcoral";
         console.log(0);
+        image_transition_animation("right");
     }
 
     // User stayed in the middle.
@@ -60,3 +60,19 @@ document.addEventListener("mouseup", function(event) {
     }
 
 });
+
+function image_transition_animation(fade_out_direction) {
+    design_container.classList.add("fade-out-" + fade_out_direction);
+        setTimeout(function () {
+            design_container.style.opacity = "0";
+            design_container.style.transform = "scale(0)";
+            design_container.classList.remove("fade-out-" + fade_out_direction);
+
+            design_container.classList.add("fade-in");
+            setTimeout(function () {
+                design_container.style.opacity = "1";
+                design_container.style.transform = "translateX(0px)";
+                design_container.classList.remove("fade-in");
+            }, 500);
+        }, 500);
+}

@@ -96,3 +96,39 @@ body {
         transform: translateX(0px);
     }
 }
+
+.fade-out-left {
+    animation: fade-out-left 0.5s ease;
+    animation-fill-mode: both;
+}
+
+@keyframes fade-out-left {
+    100% {
+        opacity: 0;
+        transform: translateX(-50vw) rotate(-60deg);
+    }
+}
+
+.fade-out-right {
+    animation: fade-out-right 0.5s ease;
+    animation-fill-mode: both;
+}
+
+@keyframes fade-out-right {
+    100% {
+        opacity: 0;
+        transform: translateX(50vw) rotate(60deg);
+    }
+}
+
+.fade-in {
+    animation: fade-in 0.5s ease;
+    animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
