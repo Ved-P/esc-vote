@@ -31,6 +31,17 @@ document.addEventListener("mouseup", function(event) {
 
     is_mouse_down = false;
 
+    // User finished voting.
+    if (index >= images.length) {
+        design_container.classList.add("return-to-mid");
+        setTimeout(function () {
+            design_container.style.transform = "translateX(0px)";
+            design_container.classList.remove("return-to-mid");
+        }, 500);
+
+        return;
+    }
+
     var design_bound = design_container.getBoundingClientRect();
     var left_bound = swipe_left.getBoundingClientRect();
     var right_bound = swipe_right.getBoundingClientRect();
@@ -77,7 +88,13 @@ function image_transition_animation(fade_out_direction) {
 
             // Switch to next image.
             index++;
-            design_container.innerHTML = html_img(images[index]);
+            if (index < images.length) {
+                design_container.innerHTML = html_img(images[index]);
+            }
+            else {
+                design_container.innerHTML = "That's all! Thanks for voting!";
+                design_container.style.textAlign = "center";
+            }
 
             design_container.classList.add("fade-in");
             setTimeout(function () {
